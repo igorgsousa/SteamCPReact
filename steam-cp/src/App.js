@@ -1,14 +1,15 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import GlobalStyles from './css'
+import Routes from './components/Routes';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-      </header>
-    </div>
+    <>
+      <GlobalStyles />
+      <Routes/>
+    </>
   );
 }
 
