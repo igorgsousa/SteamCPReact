@@ -1,5 +1,5 @@
 import React from "react";
-import {NavDropdown}  from  'react-bootstrap'
+import {StyledNavDropdown} from './css'
 
 
 export default class NavDropDownMouseOver extends React.Component {
@@ -21,9 +21,9 @@ export default class NavDropDownMouseOver extends React.Component {
 
     render(){
         return (
-            <NavDropdown show={this.state.open} {...this.props} onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} >
+            <StyledNavDropdown show={this.state.open} {...this.props} onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} >
                 {this.props.children}
-            </NavDropdown>    
+            </StyledNavDropdown>    
         )
     }
 }

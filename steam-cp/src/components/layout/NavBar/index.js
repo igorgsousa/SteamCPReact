@@ -47,6 +47,11 @@ export default function Header() {
                                     SUPORTE
                                 </Link>
                             </Nav.Item>
+                            <NavDropDownMouseOver title="ADMINISTRATIVO" id="administrativo-dropdown">
+                                <Link href="/" fontSize="11px">Desenvolvedoras </Link>
+                                <Link href="/" fontSize="11px">Categorias </Link>
+                                <Link href="/" fontSize="11px">Jogos </Link>
+                            </NavDropDownMouseOver>
                         </HeaderRow>
                     </Col>
                 </Row>

@@ -8,6 +8,7 @@ export default function StoreHomePage(){
     return (
         <Content>
             <NavBar/>
+            <img src="/img/fake.png"/>
         </Content>
     )
 }
