@@ -8,6 +8,9 @@ export const Content = styled.div`
     #comunidade-dropdown::after{
       display: none; 
    }
+   #administrativo-dropdown::after{
+      display: none; 
+   }
 
    .dropdown-menu{
         background-color : #171a21;
