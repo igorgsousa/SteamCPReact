@@ -6,7 +6,7 @@ import {Content, StyledFormControl, StyledFormLabel, StyledFormGroup} from './cs
 
 
 
-export default function LoginPageInputGroup(props){
+export function InputGroup(props){
     return (
         <Content>
             <Row>

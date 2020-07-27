@@ -3,7 +3,7 @@ import React from 'react';
 import { Nav, Container, Row, Col, Form } from 'react-bootstrap'
 
 import { Content, LoginBox, LoginBoxSection, BeginSectionHeader, ForgotPasswordText, LoginBoxSectionSeparator, CustomButton } from './css'
-import LoginPageinputGroup from './LoginPageInputGroup'
+import {InputGroup} from '../../components/layout/SteamForm'
 
 import NavBar from '../../components/layout/NavBar';
 
@@ -35,8 +35,8 @@ export default class LoginPage extends React.Component {
                                     <br/>
                                     <br/>
                                     <Form>
-                                        <LoginPageinputGroup id="username" label="Nome da conta Steam" name="username" value={this.state.username} onChange={this.onChange}/>
-                                        <LoginPageinputGroup id="password" label="Palavra-passe" name="password" value={this.state.password} onChange={this.onChange} type="password"/>
+                                        <InputGroup id="username" label="Nome da conta Steam" name="username" value={this.state.username} onChange={this.onChange}/>
+                                        <InputGroup id="password" label="Palavra-passe" name="password" value={this.state.password} onChange={this.onChange} type="password"/>
                                     </Form>
                                     <br/>
                                     <br/>

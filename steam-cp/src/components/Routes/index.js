@@ -9,6 +9,7 @@ import {
 
 import StoreHomePage from '../../pages/store/StoreHomePage'
 import LoginPage from '../../pages/LoginPage'
+import CategoryListPage from  '../../pages/administrative/category/CategoryListPage'
 
 
 function SecureRoute ({children, ...rest}){
@@ -51,7 +52,10 @@ export default function Routes() {
             <LoginRoute path="/login" exact={true}>
                 <LoginPage/>
             </LoginRoute>
-
+            
+            <SecureRoute path="/category" exact={true}>
+                <CategoryListPage />
+            </SecureRoute> 
             <SecureRoute path="/" exact={true}>
                 <StoreHomePage />
             </SecureRoute> 
