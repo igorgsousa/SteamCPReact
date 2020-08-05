@@ -1,8 +1,10 @@
 import React from 'react';
 
-import {  Container, Row, Col, Table } from 'react-bootstrap'
+import {  Container, Row, Col } from 'react-bootstrap'
 
-import { Content } from './css'
+import { Redirect } from "react-router-dom";
+
+import { Content , CustomTable, CustomButton} from './css'
 
 import NavBar from '../../../../components/layout/NavBar';
 
@@ -13,7 +15,9 @@ export default class CategoryListPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            list : []
+            list : [],
+            redirectToForm :false,
+            formUrl : ''
         }
     }
 
@@ -23,36 +27,56 @@ export default class CategoryListPage extends React.Component {
         })
     }
 
+    goToFormPage = ( category ) =>{
+        if(category){
+            this.setState({ redirectToForm : true, formUrl : `/category/edit/${category.id}`})
+        }else{
+            this.setState({ redirectToForm : true, formUrl : '/category/create'})
+        }
+    }
+
     render() {
         return (
             <Content>
                 <NavBar />
                 <Container>
-                 <Row>
-                    <Col>
-                    
-                       
-                <Table striped bordered hover >
-                                <thead>
-                                    <tr>
-                                    <th> id </th>
-                                    <th> nome </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    { this.state.list.map( e =>{
-                                        return (
-                                            <tr key={e.id}>
-                                                <td>{e.id}</td>
-                                                <td>{e.name}</td>
-                                            </tr>
-                                        )
-                                    } ) }
-                                </tbody>
-                        </Table>
+                    <Row>
+                        <Col> 
+                            <CustomButton onClick={()=>this.goToFormPage()}>
+                                Novo
+                            </CustomButton> 
+                        </Col>
+                    </Row>    
+                    <Row>
+                        <Col>                        
+                            <CustomTable striped bordered hover >
+                                    <thead>
+                                        <tr>
+                                        <th> id </th>
+                                        <th> nome </th>
+                                        <th style={{width: '50px'}}>  </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        { this.state.list.map( e =>{
+                                            return (
+                                                <tr key={e.id}>
+                                                    <td>{e.id}</td>
+                                                    <td>{e.name}</td>
+                                                    <td> 
+                                                        <CustomButton onClick={() => this.goToFormPage(e)}>
+                                                            Editar
+                                                        </CustomButton>
+                                                    </td>
+                                                </tr>
+                                            )
+                                        } ) }
+                                    </tbody>
+                            </CustomTable>
                         </Col>     
-                </Row>
+                    </Row>
                 </Container>
+                { this.state.redirectToForm&&<Redirect to={{ pathname : this.state.formUrl, state:{ from: this.props.location } }} /> }
             </Content>
         )
     }

@@ -1,6 +1,6 @@
 import  styled  from 'styled-components'
 
-import { Button}  from  'react-bootstrap'
+import { Button, Table}  from  'react-bootstrap'
 
 export const Content = styled.div`
     color : #c6d4df;
@@ -69,11 +69,21 @@ export const CustomButton =  styled(Button) `
     padding: 0 15px;
     font-size: 15px;
     line-height: 30px;
-    position : absolute;
-    bottom: 0px;
 
     :hover{
         background: linear-gradient( -60deg, #417a9b 5%,#67c1f5 95%);
         color : white !important;
     }
+`
+
+export const CustomTable =  styled(Table) `
+    color : white;
+
+    
+    tr{
+        :hover{
+            color : red !important;
+        }
+    }
+    
 `

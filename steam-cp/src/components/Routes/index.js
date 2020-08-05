@@ -10,6 +10,8 @@ import {
 import StoreHomePage from '../../pages/store/StoreHomePage'
 import LoginPage from '../../pages/LoginPage'
 import CategoryListPage from  '../../pages/administrative/category/CategoryListPage'
+import CategoryFormPage from  '../../pages/administrative/category/CategoryFormPage'
+
 
 
 function SecureRoute ({children, ...rest}){
@@ -55,6 +57,12 @@ export default function Routes() {
             
             <SecureRoute path="/category" exact={true}>
                 <CategoryListPage />
+            </SecureRoute> 
+            <SecureRoute path="/category/create" exact={true}>
+                <CategoryFormPage />
+            </SecureRoute> 
+            <SecureRoute path="/category/edit/:id" exact={true}>
+                <CategoryFormPage />
             </SecureRoute> 
             <SecureRoute path="/" exact={true}>
                 <StoreHomePage />
